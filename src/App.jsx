@@ -1,11 +1,13 @@
 import './App.css';
-import ItemListContainer from './container/itemListContainer';
+import NavBar from './container/NavBar';
+import ItemsListContainer from './container/ItemsListContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ItemListContainer />
+    <div className='App'>
+      <header className='App-header'>
+      <NavBar />
+      <ItemsListContainer />
       </header>
     </div>
   );

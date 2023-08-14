@@ -1,0 +1,11 @@
+img {
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+}
+.carrito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #ffffff;
+}

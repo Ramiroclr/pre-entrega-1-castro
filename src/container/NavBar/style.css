@@ -1,0 +1,30 @@
+.colorNav {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 3% ;
+    align-items: center;
+    font-size: 1.5rem;    
+}
+.navList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    
+}
+li {
+    margin: 0 4rem;
+    list-style: none;
+
+
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+a :hover {
+    color: rgb(181, 163, 0);
+}
