@@ -7,7 +7,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
       <NavBar />
-      <ItemsListContainer />
+      <ItemsListContainer props="Pre-entrega 1!!"/>
       </header>
     </div>
   );

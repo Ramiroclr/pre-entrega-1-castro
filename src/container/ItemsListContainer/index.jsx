@@ -1,9 +1,9 @@
 import './style.css'
 
-const ItemsListContainer = () => {
+const ItemsListContainer = ({props}) => {
   return (
     <div className="body">
-      <h1>Pre-entrega 1!!</h1>
+      <h2>{props}</h2>
     </div>
   );
 }
