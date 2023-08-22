@@ -1,5 +1,5 @@
 import "./style.css";
-import CartWidget from "../../components/components/CartWidget/index"
+import CartWidget from "../../components/CartWidget/index"
 
 
 
