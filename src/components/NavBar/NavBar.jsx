@@ -1,5 +1,5 @@
-import "./style.css";
-import CartWidget from "../../components/CartWidget/index"
+import "./NavBar.css";
+import CartWidget from "../CartWidget/index"
 
 
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './styles.css'
+import './ItemCount.css'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
-const ItemCount = ({stock = 5}) => {
+const ItemCount = ({stock = 5, handleAddToCart}) => {
     //Creamos un estado extrayendo una variable que represente al estado y una función para modificar ese estado
     //El estado no se puede cambiar sin usaar esta función en pareja.
     //Cuando usamos el useState le podemos asignar un valor inicial al estado pasandole el valor como parámetro.
@@ -29,6 +29,7 @@ const ItemCount = ({stock = 5}) => {
                 <Button variant="secondary">{counter}</Button>
                 <Button onClick={add} variant="secondary">+</Button>
             </ButtonGroup>
+            <Button onClick={() => handleAddToCart()}>Agregar al carrito</Button>            
         </div>
     )
 }

@@ -1,9 +1,7 @@
 .colorNav {
-    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 3% ;
     align-items: center;
     font-size: 1.5rem;    
 }
