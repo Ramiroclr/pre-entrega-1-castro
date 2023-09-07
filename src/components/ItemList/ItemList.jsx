@@ -13,7 +13,7 @@ const ItemList = ({ productsProps }) => {
             */}
             {productsProps?.map((element, id) => {
                 return (
-                    <Item itemProduct={element}/>
+                    <Item key= {element.id} itemProduct={element}/>
                 )
             })}
         </div>
