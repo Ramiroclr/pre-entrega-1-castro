@@ -29,7 +29,7 @@ const ItemCount = ({stock = 5, handleAddToCart}) => {
                 <Button variant="secondary">{counter}</Button>
                 <Button onClick={add} variant="secondary">+</Button>
             </ButtonGroup>
-            <Button onClick={() => handleAddToCart()}>Agregar al carrito</Button>            
+            <Button onClick={() => handleAddToCart(counter)}>Agregar al carrito</Button>            
         </div>
     )
 }

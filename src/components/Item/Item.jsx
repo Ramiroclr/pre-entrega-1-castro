@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import {Link} from 'react-router-dom'
 
 //Item aporta el HTML de cada producto del catálogo.
 
@@ -15,7 +16,10 @@ const Item = ({itemProduct}) => {
                     <Card.Text>
                     Precio: ${itemProduct?.price}
                     </Card.Text>
+                <Link to ={`/item/${itemProduct?.id}`}>
                     <Button variant="primary">Ver Detalle</Button>
+                </Link>
+                    
                 </Card.Body>
             </Card>
         </div>

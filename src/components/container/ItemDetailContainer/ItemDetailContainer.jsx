@@ -9,6 +9,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         callPromiseDetail(setProductState, id)
     }, [])
+    
     return (
 
         <div>
