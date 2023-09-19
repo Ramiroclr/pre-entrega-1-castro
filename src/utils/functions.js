@@ -1,5 +1,14 @@
 import products from "../Data/data";
 import axios from "axios";
+import {
+    collection,
+    getDocs,
+    getFirestore,
+    query,
+    where
+} from "firebase/firestore/lite"
+
+
 
 //Creamos una promesa con un setTimeOut adentro para simular una llamada a una Api.
 export const productsPromise = new Promise((resolve, reject) => {
@@ -16,14 +25,14 @@ export const callPromise = async (id) => {
     let productsArray = axiosResponse.data;
     try {
         // Creamos una condición para preguntar si es que la categoría existo o no en los Params.
-        if(id){
+        if (id) {
             // Si la categoria existe en los Params, filtramos los productos con .filter
             // filter crea un nuevo array filtrando según la condiciónque nosotros le pasemos
             // Ya que filter crea un nuevo array,podemos guardar este array en la variable filteredProducts
             // y la retornamos.
             let filteredProducts = productsArray.filter((element) => element.category == id)
             return filteredProducts;
-        }else{
+        } else {
             // Si la categoría no existe, directamente devolvemos el array entero de productos sin filter.
             return productsArray;
         }
@@ -47,7 +56,7 @@ export const callPromise = async (id) => {
 export const callPromiseDetail = async (setProductState, id) => {
     try {
         let axiosResponse = await axios.get('https://api.npoint.io/c1db7eaa3d764082bfb5')
-        
+
         let filteredProduct = axiosResponse.data.find((element) => element.id == id)
         setProductState(filteredProduct)
     } catch (error) {
@@ -55,3 +64,27 @@ export const callPromiseDetail = async (setProductState, id) => {
     }
 }
 
+// --------- A PARTIR DE ACA USAMOS FIREBASE -------------------
+
+export const fetchProductsFirebase = async (id) => {
+    // Creamos instancia de base de datos de Firebase.
+    const db = getFirestore()
+    // Accedo a mi colección de productos de Firebase.
+    const productsCollection = collection(db, 'products')
+    try {
+        // Creamos una condición para preguntar si es que la categoría existo o no en los Params.
+        if (id) {
+            const queryFiltrado = query(productsCollection, where('categoryId', '==', id))
+            const queryResult = await getDocs(queryFiltrado)
+            console.log(queryResult)
+            return (queryResult.docs)
+        } else {
+            const queryResult = await getDocs(productsCollection)
+            console.log(queryResult)
+            return (queryResult.docs)
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+}

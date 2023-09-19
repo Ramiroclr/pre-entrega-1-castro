@@ -5,7 +5,7 @@ import Item from '../../Item/Item';
 import ItemList from '../../ItemList/ItemList';
 import productsFromFile from '../../../Data/data';
 import { useEffect, useState } from 'react';
-import {callPromise} from '../../../utils/functions';
+import {fetchProductsFirebase} from '../../../utils/functions';
 import { useParams } from 'react-router-dom';
 
 // Este componente (COMPONENTE LOGICO) es el que contiene toda la lógica del catálogo y envía los productos a los componentes de presentación.
@@ -22,7 +22,7 @@ const ItemListContainer = () => {
     asyncFunction()
   }, [id])
   const asyncFunction = async() => {
-    let productList = await callPromise(id)
+    let productList = await fetchProductsFirebase(id)
     setProductListState(productList)
   }
   

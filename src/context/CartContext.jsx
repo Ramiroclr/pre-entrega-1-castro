@@ -66,9 +66,37 @@ const CartProvider = ({ defaultValue = [], children }) => {
     return cart.findIndex((element) => element.item.id == id)
   }
 
+  const clearCart = () => {
+    setCart([])
+  }
+
+  const removeFromCart = (id) => {
+    const cartCopy = [...cart]
+    const filteredProducts = cartCopy.filter((element) => element.item.id != id)
+    setCart(filteredProducts)
+  }
+
+  const getQuantity = () => {
+    let cantidad = 0
+    cart.forEach((element) => cantidad = cantidad + element.quantity)
+    return cantidad
+}
+
+const getTotal = () => {
+    let total = 0
+    cart.forEach((element) => {
+        total = total + (element.quantity * element.item.price)
+    })
+    return total
+}
+
   let context = {
     cart,
     addToCart,
+    getQuantity,
+    getTotal,
+    removeFromCart,
+    clearCart
   }
 
   return (
