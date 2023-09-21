@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from '../../ItemDetail/ItemDetail'
-import { callPromiseDetail } from '../../../utils/functions';
-import {useParams} from 'react-router-dom';
+import { callPromiseDetail, fetchProductFirebase } from '../../../utils/functions';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
     const [productState, setProductState] = useState()
-    let {id} = useParams()
+    let { id } = useParams()
+    const asyncFunction = async () => {
+        let product = await fetchProductFirebase(id)
+        setProductState(product)
+    }
     useEffect(() => {
-        callPromiseDetail(setProductState, id)
+        asyncFunction(id)
     }, [])
-    
+
     return (
 
         <div>
-            <ItemDetail product={ productState }/>
+            <ItemDetail product={productState} />
         </div>
     )
 }

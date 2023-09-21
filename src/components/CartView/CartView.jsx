@@ -17,6 +17,7 @@ const CartView = () => {
                     <h2>El carrito está vacío</h2>
                 )
             }
+            <Button variant="primary" onClick={() => handleAddOrder()}>Confirmar compra</Button>
         </div>
     )
 }

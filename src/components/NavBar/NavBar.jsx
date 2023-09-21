@@ -11,8 +11,8 @@ const NavBar = () => {
       <h2>Todo Bike</h2>
       <ul className="navList">
         <NavLink to='/'><li>Home</li></NavLink>
-        <NavLink to='/categories/1'><li>Elegantes</li></NavLink>
-        <NavLink to='/categories/2'><li>Deportivos</li></NavLink>
+        <NavLink to='/categories/adultos'><li>Adultos</li></NavLink>
+        <NavLink to='/categories/niños'><li>Niños</li></NavLink>
       </ul>
       {
         cart.length > 0 && (

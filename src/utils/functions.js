@@ -5,7 +5,9 @@ import {
     getDocs,
     getFirestore,
     query,
-    where
+    where,
+    doc,
+    getDoc
 } from "firebase/firestore/lite"
 
 
@@ -77,12 +79,39 @@ export const fetchProductsFirebase = async (id) => {
             const queryFiltrado = query(productsCollection, where('categoryId', '==', id))
             const queryResult = await getDocs(queryFiltrado)
             console.log(queryResult)
-            return (queryResult.docs)
+            let mappedProducts = queryResult.docs.map((element) => ({
+                id: element.id,
+                ...element.data()
+            }))
+            return (mappedProducts)
         } else {
             const queryResult = await getDocs(productsCollection)
             console.log(queryResult)
-            return (queryResult.docs)
+            let mappedProducts = queryResult.docs.map((element) => ({
+                id: element.id,
+                ...element.data()
+            }))
+            return (mappedProducts)
         }
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const fetchProductFirebase = async (id) => {
+    // Creamos instancia de base de datos de Firebase.
+    const db = getFirestore()
+    // Accedo a mi colección de productos de Firebase.
+    const itemReference = doc(db, 'products', id)
+    try {
+        const queryResult = await getDoc(itemReference)
+        console.log(queryResult)
+        let mappedProduct = {
+            id: queryResult.id,
+            ...queryResult.data()
+        }
+        return (mappedProduct)
 
     } catch (error) {
         console.log(error)

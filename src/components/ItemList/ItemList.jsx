@@ -11,9 +11,9 @@ const ItemList = ({ productsProps }) => {
             {/* Mapeamos la lista de productos a componentes Item.
             Es decir que estamos transformando cada producto en un componente Item.
             */}
-            {productsProps?.map((element, id) => {
+            {productsProps?.map((element) => {
                 return (
-                    <Item key= {element.id} itemProduct={element.data()}/>
+                    <Item key= {element.id} itemProduct={element}/>
                 )
             })}
         </div>

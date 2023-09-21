@@ -6,6 +6,7 @@ import ItemListContainer from './components/container/ItemListContainer/ItemList
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartProvider from './context/CartContext';
 import CartView from './components/CartView/CartView';
+import OrderView from './components/OrderView/OrderView';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route exact path='/categories/:id' element={<ItemListContainer />} />
               <Route exact path='/item/:id' element={<ItemDetailContainer />} />
               <Route exact path='/cart' element={<CartView />} />
+              <Route exact path='/order' element={<OrderView />} />
             </Routes>
           </BrowserRouter>
         </CartProvider>
