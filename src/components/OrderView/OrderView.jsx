@@ -51,6 +51,7 @@ const OrderView = () => {
             {cart?.map((element) => (
                 <OrderItem product={element} />
             ))}
+            <h4>Total de la compra: ${getTotal()}</h4>
             <Button variant="primary" onClick={() => handleAddOrder()}>Confirmar compra</Button>
         </div>
     )
