@@ -2,6 +2,8 @@ import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 import CartListContainer from '../CartListContainer/CartListContainer';
+import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
 
 const CartView = () => {
     const {cart, removeFromCart, clearCart, getTotal} = useContext(CartContext)
@@ -17,7 +19,9 @@ const CartView = () => {
                     <h2>El carrito está vacío</h2>
                 )
             }
-            <Button variant="primary" onClick={() => handleAddOrder()}>Confirmar compra</Button>
+            <NavLink to = '/order'>
+                <Button variant="primary">Confirmar compra</Button>
+            </NavLink>
         </div>
     )
 }

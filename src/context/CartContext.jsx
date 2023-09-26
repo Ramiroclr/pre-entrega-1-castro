@@ -34,7 +34,7 @@ const ejemploCarrito = [
 
 // Acá creamos el contenedor de todas las variables, estados y funciones que va a contener el contexto
 // Todo lo que esté a dentro de cartProvider va a estar disponible para todos los componentes del proyecto.
-const CartProvider = ({ defaultValue = [], children }) => {
+export const CartProvider = ({ defaultValue = [], children }) => {
   const [cart, setCart] = useState(defaultValue)
 
   // Función para agregar elementos al cart.
@@ -106,4 +106,4 @@ const getTotal = () => {
   )
 }
 
-export default CartProvider
+
