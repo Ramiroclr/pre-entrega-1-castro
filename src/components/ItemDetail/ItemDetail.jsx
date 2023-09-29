@@ -19,13 +19,12 @@ const ItemDetail = ({product}) => {
             <Card className="text-center">
                 <Card.Header>{product?.title}</Card.Header>
                 <Card.Body>
-                    <Card.Img height= {300} src={product?.pictureUrl}></Card.Img>
+                    <Card.Img height= {400} src={product?.image}></Card.Img>
                     <Card.Text>
                         {product?.description}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                <Card.Footer className="text-muted">Precio: ${product?.price}</Card.Footer>
                 <ItemCount stock={10} handleAddToCart={handleAddToCart} />
             </Card>
         </div>

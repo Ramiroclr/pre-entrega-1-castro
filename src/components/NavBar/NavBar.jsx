@@ -8,8 +8,9 @@ const NavBar = () => {
   const { cart, getQuantity } = useContext(CartContext)
   return (
     <div className="colorNav">
-      <h2>Todo Bike</h2>
+      
       <ul className="navList">
+      <h2>Todo Bike</h2>
         <NavLink to='/'><li>Home</li></NavLink>
         <NavLink to='/categories/adultos'><li>Adultos</li></NavLink>
         <NavLink to='/categories/niños'><li>Niños</li></NavLink>

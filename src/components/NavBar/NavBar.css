@@ -1,11 +1,20 @@
 .colorNav {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
+    border: grey 1px solid;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(81, 82, 81);
 }
 .navList {
+    margin-left: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -24,5 +33,11 @@ li {
 
 }
 a :hover {
-    color: rgb(181, 163, 0);
+    text-decoration: none;
+    color: rgb(173, 171, 154);
+}
+
+a{
+    text-decoration: none;
+    color: aquamarine;
 }

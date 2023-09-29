@@ -73,6 +73,7 @@ export const fetchProductsFirebase = async (id) => {
     const db = getFirestore()
     // Accedo a mi colección de productos de Firebase.
     const productsCollection = collection(db, 'products')
+
     try {
         // Creamos una condición para preguntar si es que la categoría existo o no en los Params.
         if (id) {
@@ -97,6 +98,7 @@ export const fetchProductsFirebase = async (id) => {
     } catch (error) {
         console.log(error)
     }
+
 }
 
 export const fetchProductFirebase = async (id) => {
