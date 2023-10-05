@@ -1,0 +1,11 @@
+.cart-button-container{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.cart-list-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}

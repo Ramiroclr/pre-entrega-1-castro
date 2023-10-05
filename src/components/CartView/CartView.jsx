@@ -19,9 +19,7 @@ const CartView = () => {
                     <h2>El carrito está vacío</h2>
                 )
             }
-            <NavLink to = '/order'>
-                <Button variant="primary">Confirmar compra</Button>
-            </NavLink>
+            
         </div>
     )
 }
