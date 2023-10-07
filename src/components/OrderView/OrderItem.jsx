@@ -1,11 +1,12 @@
 import React from 'react'
+import './OrderItem.css'
 
 const OrderItem = ({product}) => {
     return (
         <div>
-            <span>{product.item.title}</span>
-            <span>{product.quantity}</span>
-            <span>Precio Total: ${product.quantity * product.item.price}</span>
+            <span className='order-item-title'>{product.item.title}</span>
+            <span className='order-item-quantity'>Cantidad: {product.quantity}</span>
+            <span className='order-item-total'>Precio Total: ${product.quantity * product.item.price}</span>
         </div>
     )
 }

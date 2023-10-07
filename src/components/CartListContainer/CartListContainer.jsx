@@ -14,8 +14,9 @@ const CartListContainer = ({ cart, clearCart, removeFromCart, getTotal }) => {
                     ))
 
                 }
-                <h3>Total: ${getTotal()}</h3>
             </div>
+
+            <h3>Total: ${getTotal()}</h3>
 
             <div className='cart-button-container'>
                 <Button variant="primary" onClick={() => clearCart()}>Limpiar carrito</Button>

@@ -1,0 +1,17 @@
+.order-list-container{
+    background-color: blanchedalmond;
+    color: black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: 1rem;
+}
+
+.total-compra{
+    font-size: 1rem;
+}
+
+Button{
+    margin: 5px;
+}

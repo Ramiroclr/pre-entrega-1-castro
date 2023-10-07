@@ -5,4 +5,17 @@
 
 .cart-item{
     max-width: 200px;
+    margin: 5px;
+}
+
+.cart-item-text-container{
+    height: 5.5em;
+}
+
+.cart-item-price{
+    font-size: 15px;
+}
+
+.cart-item-quantity{
+    font-size: 15px;
 }

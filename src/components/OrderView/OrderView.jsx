@@ -8,7 +8,8 @@ import {
     getFirestore,
     addDoc
 } from "firebase/firestore/lite"
-
+import './OrderView.css';
+import { NavLink } from 'react-router-dom';
 
 const OrderView = () => {
     const { cart, removeFromCart, clearCart, getTotal } = useContext(CartContext)
@@ -48,11 +49,24 @@ const OrderView = () => {
     return (
         <div>
             <h3>Revisa tu compra antes de confirmarla</h3>
-            {cart?.map((element) => (
-                <OrderItem product={element} />
-            ))}
-            <h4>Total de la compra: ${getTotal()}</h4>
-            <Button variant="primary" onClick={() => handleAddOrder()}>Confirmar compra</Button>
+            <div className='order-list-container'>
+                {cart?.map((element) => (
+                    <>
+                        <OrderItem product={element} />
+                        <hr></hr>
+                    </>
+                ))}
+                <h4 className='total-compra'>Total de la compra: ${getTotal()}</h4>
+            </div>
+            <NavLink>
+                <Button variant="primary" onClick={() => handleAddOrder()}>Confirmar compra</Button>
+            </NavLink>
+            <NavLink to='/cart'>
+                <Button variant="primary">Volver al carrito</Button>
+            </NavLink>
+            <NavLink to='/'>
+                <Button variant="primary">Seguir comprando</Button>
+            </NavLink>
         </div>
     )
 }
